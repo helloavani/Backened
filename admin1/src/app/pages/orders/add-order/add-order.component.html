@@ -1,0 +1,115 @@
+<nb-card>
+      <nb-card-header>Add New Product</nb-card-header>
+      <nb-card-body>
+          <div class="row">
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label for="inputpname">Product Name</label>
+               <select [(ngModel)]="selectedproduct" class="form-control">
+            <option *ngFor="let product of productList" [ngValue]="product">{{product.productname}}</option>
+            
+          </select>
+            </div>
+          </div>
+        <div class="col-sm-6">
+
+
+            <div class="form-group">
+              <label for="inputCat">User ID</label>
+              <select [(ngModel)]="device.userID" class="form-control">
+            <option *ngFor="let user of userList" [ngValue]="user.email">{{user.email}}</option>
+            
+          </select>
+            </div>
+          </div>
+        </div>
+        
+        <div class="row">
+         
+          <div class="col-sm-6">
+
+            <div class="form-group">
+              <label for="inputSubCat">Date Of Delivery/Pickup</label>
+              <input [(ngModel)]="device.dateofdelivery" type="text" class="form-control" id="dateofdelivery" placeholder="Enter Date Of Delivery/Pickup">
+            </div>
+
+            
+          </div>
+           <div class="col-sm-6">
+            <div class="form-group">
+              <label for="inputBrand">Status</label>
+               <select [(ngModel)]="device.status" class="form-control">
+            <option value="orderplaced">Order Placed</option>
+            <option value="orderdelivered">Order Delivered</option>
+            <option value="ordercancelled">Order Cancelled</option>
+            <option value="ordercompleted">Order Completed</option>
+            
+          </select>
+            </div>
+          </div>
+          
+        </div>
+       
+        <div class="row">
+         
+
+            <div class="col-sm-6">
+            <div class="form-group">
+              <label for="duration">Duration</label>
+              <input [(ngModel)]="device.duration" type="text" class="form-control" id="duration" placeholder="Duration">
+            </div>
+          </div>
+             
+        
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label for="price">Price</label>
+              <input [(ngModel)]="device.price" type="text" class="form-control" id="price" placeholder="Price">
+            </div>
+          </div>
+        </div>
+            <div class="row">
+         
+
+            <div class="col-sm-6">
+            <div class="form-group">
+              <label for="advanceamount">Advance Amount</label>
+              <input [(ngModel)]="device.advanceamount" type="text" class="form-control" id="advanceamount" placeholder="Advance Amount">
+            </div>
+          </div>
+             
+        
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label for="inputrenttype">Rent Type</label>
+              <input [(ngModel)]="device.renttype" type="text" class="form-control" id="inputrenttype" placeholder="Rent Type">
+            </div>
+          </div>
+        </div>
+ <div class="row">
+         
+
+            <div class="col-sm-6">
+            <div class="form-group">
+              <label for="comments">Comments</label>
+              <input [(ngModel)]="device.comments" type="text" class="form-control" id="comments" placeholder="Comments">
+            </div>
+          </div>
+             
+        
+        
+        </div>
+     
+        <button (click)="addNewProduct(device)" type="submit" class="btn btn-primary">Submit</button>
+        <div *ngIf="!status" class="row text-danger">
+          <div class="col-sm-12">
+            {{msg}}
+          </div>
+          </div>
+          <div *ngIf="status" class="row text-success">
+          <div class="col-sm-12">
+            {{msg}}
+          </div>
+          </div>
+      </nb-card-body>
+    </nb-card>

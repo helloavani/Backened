@@ -1,0 +1,149 @@
+<nb-card>
+      <nb-card-header>Add New Product</nb-card-header>
+      <nb-card-body>
+          <div class="row">
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label for="inputpname">Product Name</label>
+              <input [(ngModel)]="device.productname" type="text" class="form-control" id="inputpname" placeholder="Product Name">
+            </div>
+          </div>
+          <div class="col-sm-6">
+
+            <div class="form-group">
+              <label for="inputdesc">Product Description</label>
+              <input [(ngModel)]="device.description" type="text" class="form-control" id="inputdesc" placeholder="Description">
+            </div>
+
+            
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label for="inputAccountID">Vendor ID</label>
+              <select [(ngModel)]="device.vendorID" class="form-control">
+            <option *ngFor="let user of userList" [ngValue]="user.email">{{user.email}}</option>
+            
+          </select>
+        </div>
+
+          </div>
+          <div class="col-sm-6">
+
+
+            <div class="form-group">
+              <label for="inputCat">Category</label>
+              <select [(ngModel)]="device.category" class="form-control">
+            <option *ngFor="let cat of catList" [ngValue]="cat.name">{{cat.name}}</option>
+            
+          </select>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+         
+          <div class="col-sm-6">
+
+            <div class="form-group">
+              <label for="inputSubCat">Sub-Category</label>
+              <input [(ngModel)]="device.subcategory" type="text" class="form-control" id="inputSubCat" placeholder="Enter Sub-Category">
+            </div>
+
+            
+          </div>
+           <div class="col-sm-6">
+            <div class="form-group">
+              <label for="inputBrand">Brand</label>
+               <select [(ngModel)]="device.brand" class="form-control">
+            <option *ngFor="let brand of brandList" [ngValue]="brand.name">{{brand.name}}</option>
+            
+          </select>
+            </div>
+          </div>
+          
+        </div>
+          <div class="row">
+          <div class="col-sm-6">
+
+            <div class="form-group">
+              <label for="inputModel">Model</label>
+              <input [(ngModel)]="device.model" type="text" class="form-control" id="inputModel" placeholder="Enter Model">
+            </div>
+             
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label for="inputBestFor">Best For</label>
+              <input [(ngModel)]="device.bestfor" type="text" class="form-control" id="inputBestFor" placeholder="Best For">
+            </div>
+          </div>
+        </div>
+            <div class="row">
+         
+
+            <div class="col-sm-6">
+            <div class="form-group">
+              <label for="inputwhatitincludes">What It Includes</label>
+              <input [(ngModel)]="device.whatitincludes" type="text" class="form-control" id="inputwhatitincludes" placeholder="What It Includes">
+            </div>
+          </div>
+             
+        
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label for="inputrenttype">Rent Type</label>
+              <input [(ngModel)]="device.renttype" type="text" class="form-control" id="inputrenttype" placeholder="Rent Type">
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+         
+
+            <div class="col-sm-6">
+            <div class="form-group">
+              <label for="inputonedayrent">One Day Rent</label>
+              <input [(ngModel)]="device.onedayrent" type="text" class="form-control" id="inputonedayrent" placeholder="One Day Rent">
+            </div>
+          </div>
+             
+        
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label for="inputthreedayrent">Three Day Rent</label>
+              <input [(ngModel)]="device.threedayrent" type="text" class="form-control" id="inputthreedayrent" placeholder="Three Day Rent">
+            </div>
+          </div>
+        </div>
+          <div class="row">
+         
+
+            <div class="col-sm-6">
+            <div class="form-group">
+              <label for="inputsevendayrent">Seven Day Rent</label>
+              <input [(ngModel)]="device.sevendayrent" type="text" class="form-control" id="inputsevendayrent" placeholder="Seven Day Rent">
+            </div>
+          </div>
+              <div class="col-sm-6">
+            <div class="form-group">
+              <label for="inputquantity">Quantity</label>
+              <input [(ngModel)]="device.quantity" type="text" class="form-control" id="inputquantity" placeholder="Quantity">
+            </div>
+          </div> 
+        
+         
+        </div>
+        <button (click)="addNewProduct(device)" type="submit" class="btn btn-primary">Submit</button>
+        <div *ngIf="!status" class="row text-danger">
+          <div class="col-sm-12">
+            {{msg}}
+          </div>
+          </div>
+          <div *ngIf="status" class="row text-success">
+          <div class="col-sm-12">
+            {{msg}}
+          </div>
+          </div>
+      </nb-card-body>
+    </nb-card>

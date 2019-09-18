@@ -1,0 +1,20 @@
+<nb-card>
+  <nb-card-header>
+    User List
+  </nb-card-header>
+
+  <nb-card-body>
+  	
+  	<div class="row">
+  	<div class="col-sm-6">
+            <div class="form-group">
+              <label for="Search">Search</label>
+             <input #search class="search form-control" type="text" placeholder="Search..." (keydown.enter)="onSearch(search.value)">
+            </div>
+          </div>
+      </div>
+
+    <ng2-smart-table [settings]="settings" [source]="source" (deleteConfirm)="onDeleteConfirm($event)" (custom)="playpause($event)" (editConfirm)="updateRecord($event)">
+    </ng2-smart-table>
+  </nb-card-body>
+</nb-card>

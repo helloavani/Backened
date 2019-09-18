@@ -1,0 +1,37 @@
+<nb-card>
+      <nb-card-header>Add New Brand</nb-card-header>
+      <nb-card-body>
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label for="inputCat">Category</label>
+              <select [(ngModel)]="device.category" class="form-control">
+            <option *ngFor="let brand of CatList" [ngValue]="brand.name">{{brand.name}}</option>
+            
+          </select>
+        </div>
+
+          </div>
+          <div class="col-sm-6">
+
+
+            <div class="form-group">
+              <label for="inputbrandname">Brand Name</label>
+              <input [(ngModel)]="device.name" type="text" class="form-control" id="inputbrandname" placeholder="Enter Brand Name">
+            </div>
+          </div>
+        </div>
+        
+        <button (click)="addNewDevice(device)" type="submit" class="btn btn-primary">Submit</button>
+        <div *ngIf="!status" class="row text-danger">
+          <div class="col-sm-12">
+            {{msg}}
+          </div>
+          </div>
+          <div *ngIf="status" class="row text-success">
+          <div class="col-sm-12">
+            {{msg}}
+          </div>
+          </div>
+      </nb-card-body>
+    </nb-card>

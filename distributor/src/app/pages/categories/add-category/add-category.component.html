@@ -1,0 +1,27 @@
+<nb-card>
+      <nb-card-header>Add New Category</nb-card-header>
+      <nb-card-body>
+    
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="form-group">
+              <label for="inputCat">Category Name</label>
+              <input [(ngModel)]="device.name" type="text" class="form-control" id="inputCat" placeholder="Enter Category Name">
+            </div>
+          </div>
+       
+        </div>
+          
+        <button (click)="addNewCat(device)" type="submit" class="btn btn-primary">Submit</button>
+        <div *ngIf="!status" class="row text-danger">
+          <div class="col-sm-12">
+            {{msg}}
+          </div>
+          </div>
+          <div *ngIf="status" class="row text-success">
+          <div class="col-sm-12">
+            {{msg}}
+          </div>
+          </div>
+      </nb-card-body>
+    </nb-card>

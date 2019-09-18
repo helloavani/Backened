@@ -1,0 +1,96 @@
+<nb-card>
+      <nb-card-header>Add New Device</nb-card-header>
+      <nb-card-body>
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label for="inputAccountID">Account ID</label>
+              <select [(ngModel)]="device.accountID" class="form-control">
+            <option *ngFor="let user of userList" [ngValue]="user.name">{{user.name}}</option>
+            
+          </select>
+        </div>
+
+          </div>
+          <div class="col-sm-6">
+
+
+            <div class="form-group">
+              <label for="inputDeviceModel">Device Model</label>
+              <select [(ngModel)]="device.devicemodel" class="form-control">
+            <option value="tk103">tk103</option>
+            <option value="gt06n">gt06n</option>
+            
+          </select>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label for="inputSimno">Sim Number</label>
+              <input [(ngModel)]="device.simno" type="text" class="form-control" id="inputSimno" placeholder="Phone No">
+            </div>
+          </div>
+          <div class="col-sm-6">
+
+            <div class="form-group">
+              <label for="inputImei">IMEI</label>
+              <input [(ngModel)]="device.imei" type="text" class="form-control" id="inputImei" placeholder="IMEI">
+            </div>
+
+            
+          </div>
+        </div>
+          <div class="row">
+          <div class="col-sm-6">
+
+            <div class="form-group">
+              <label for="inputLicensePlate">License Plate</label>
+              <input [(ngModel)]="device.licensePlate" type="text" class="form-control" id="inputLicensePlate" placeholder="License Plate">
+            </div>
+             
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label for="inputDeviceNickName">Device Nickname</label>
+              <input [(ngModel)]="device.deviceID" type="text" class="form-control" id="inputDeviceNickName" placeholder="Device Nickname">
+            </div>
+          </div>
+        </div>
+            <div class="row">
+          <div class="col-sm-6">
+
+            <div class="form-group">
+              <label for="inputVehicleType">Vehicle Type</label>
+              <select [(ngModel)]="device.vehicletype" class="form-control" id="inputVehicleType">
+            <option value="car">Car</option>
+            <option value="bus">Bus</option>
+            <option value="truck">Truck</option>
+            <option value="bike">Bike</option>
+            <option value="personaltracker">Personal Tracker</option>
+            
+          </select>
+            </div>
+             
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label for="inputOdometer">Odometer Reading</label>
+              <input [(ngModel)]="device.distance" type="text" class="form-control" id="inputOdometer" placeholder="Odometer">
+            </div>
+          </div>
+        </div>
+        <button (click)="addNewDevice(device)" type="submit" class="btn btn-primary">Submit</button>
+        <div *ngIf="!status" class="row text-danger">
+          <div class="col-sm-12">
+            {{msg}}
+          </div>
+          </div>
+          <div *ngIf="status" class="row text-success">
+          <div class="col-sm-12">
+            {{msg}}
+          </div>
+          </div>
+      </nb-card-body>
+    </nb-card>
